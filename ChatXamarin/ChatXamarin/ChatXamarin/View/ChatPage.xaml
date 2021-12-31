@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:ChatXamarin"
+             xmlns:sfChat="clr-namespace:Syncfusion.XForms.Chat;assembly=Syncfusion.SfChat.XForms"
+             x:Class="ChatXamarin.ChatPage">
+    
+    <ContentPage.BindingContext>
+        <local:ViewModel/>
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <sfChat:SfChat x:Name="sfChat"
+                       Messages="{Binding Messages}"
+                       CurrentUser="{Binding CurrentUser}"     
+                       ShowOutgoingMessageAvatar="True">
+            <sfChat:SfChat.Behaviors>
+                <local:SfchatBehaviors/>
+            </sfChat:SfChat.Behaviors>
+        </sfChat:SfChat>
+    </ContentPage.Content>
+</ContentPage>
