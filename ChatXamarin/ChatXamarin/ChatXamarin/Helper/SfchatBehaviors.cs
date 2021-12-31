@@ -22,6 +22,7 @@ namespace ChatXamarin
 
         protected override void OnAttachedTo(SfChat bindable)
         {
+            base.OnAttachedTo(bindable);
             sfChat = bindable;
             if (sfChat != null)
             {
@@ -31,15 +32,14 @@ namespace ChatXamarin
                     ChatListView.Loaded += ChatPage_Loaded;
                 }
             }
-            base.OnAttachedTo(bindable);
         }
 
         protected override void OnDetachingFrom(SfChat bindable)
         {
+            base.OnDetachingFrom(bindable);
             ChatListView.Loaded -= ChatPage_Loaded;
             ChatListView = null;
             sfChat = null;
-            base.OnDetachingFrom(bindable);
         }
 
         #endregion
